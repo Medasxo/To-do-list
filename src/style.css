@@ -1,3 +1,99 @@
-.hello {
-    color: red;
-  }
+:root {
+    --light-blue: #79c5e7;
+    --dark-blue: #002447;
+    --white: #fffaf7;
+    --black: #000000;
+    --mainFont: 'Pacifico', cursive;
+    --menuFontSize: 32px;
+}
+
+body {
+    display: flex;
+    gap: 20px;
+    font-family: var(--mainFont, sans-serif);
+    color: var(--dark-blue, blue);
+    width: 100%;
+    height: 100%;
+    background-color: var(--white, white);
+}
+
+.listMenu {
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mainFont, sans-serif);
+    font-size: var(--menuFontSize);
+    height: 800px;
+    width: 25%;
+    border: 3px solid var(--dark-blue, blue);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.title{
+    display: inline-block;
+    position: relative;
+}
+
+.title:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--dark-blue, blue);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.title:hover:after{
+    transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+ul{
+    height: 55%;
+    width: 85%;
+    align-self: start;
+    overflow: hidden;
+}
+
+.active-list{
+    background-color: var(--light-blue, blue);
+    border-radius: 10px;
+}
+.newListName{
+    width: 60%;
+    height: 5%;
+    border-radius: 10px;
+    font-family: var(--mainFont, sans-serif);
+    font-size: var(--menuFontSize);
+    font-size: calc(var(--menuFontSize)/2);
+}
+
+.addButton{
+    width: 80%;
+    height: 10%;
+    font-family: var(--mainFont, sans-serif);
+    font-size: var(--menuFontSize);
+    border-radius: 10px;
+    background-color: var(--dark-blue, blue);
+    color: var(--white, white);
+}
+
+.addButton:hover{
+    background-color: var(--light-blue, blue);
+}
+
+.addButton:active{
+    border: 5px solid black;
+}
+
+.mainMenu{
+    width: 72%;
+    border: 3px solid var(--dark-blue, blue);
+    border-radius: 20px;
+}
