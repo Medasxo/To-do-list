@@ -54,7 +54,7 @@ body {
   transform-origin: bottom left;
 }
 
-ul{
+#projectsList{
     height: 55%;
     width: 85%;
     align-self: start;

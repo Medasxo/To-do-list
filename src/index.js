@@ -1,4 +1,4 @@
 import './style.css';
-import { loadListMenu } from './loadListMenu';
+import { loadListMenu, addList} from './loadListMenu';
 
 loadListMenu();
