@@ -36,13 +36,23 @@ export function loadListMenu() {
     addLink.innerText = "Add";
     addLink.addEventListener('click', () =>{
         if(textInput.value !== ""){
-            const newList = document.createElement("li");
-            newList.innerText = textInput.value;
-            newList.addEventListener('click', () => {
+            let matchCount = 0;
+            let children = projectsList.children;
+            
+            for(let i = 0; i < children.length; i++){
+                if(textInput.value === children[i].textContent){
+                    matchCount++;
+                }
+            }
+            if(matchCount === 0){
+                const newList = document.createElement("li");
+                newList.innerText = textInput.value;
+                newList.addEventListener('click', () => {
                 uncheckActiveList();
                 newList.className = "active-list";
             });
             projectsList.appendChild(newList);
+        }
         }
     });
 
