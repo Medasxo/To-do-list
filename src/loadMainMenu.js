@@ -11,8 +11,13 @@ export function loadMainMenu(){
     const toDoList = document.createElement("ul");
     toDoList.className = "toDoList";
 
-    mainContent.appendChild(toDoList);
+    const addTaskButton = document.createElement("button");
+    addTaskButton.textContent = "Add Task";
+    addTaskButton.className = "addTaskButton";
 
+    
+    mainContent.appendChild(toDoList);
+    mainContent.appendChild(addTaskButton);
 
     document.body.appendChild(mainContent);
 }
@@ -20,7 +25,3 @@ export function loadMainMenu(){
 
 
 
-function displayTasks(){
-    const toDoList = document. querySelector(".toDoList");
-    
-}

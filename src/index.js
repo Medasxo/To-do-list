@@ -18,41 +18,41 @@ class Task{
         this.notes = notes;
     }
 }
-
+//Function that gets selected list's(toggled blue) ID
 function getSelectedList(){
     const projectsList = document.getElementById("projectsList");
     let children = projectsList.children;
     for(let i = 0; i < children.length; i++){
         if(children[i].className === "active-list"){
             return children[i].id;
-            
         } 
     }
-    
-    
 }
+
 function addTaskToList(title, dueDate, notes){
     let listNumber = getSelectedList();
     let tempArray = projectArray[listNumber];
+    //Checking if tempArray is defined, if not, we define 0 element with the object, so that later tempArray will be defined.
     if(tempArray === undefined){
         let tempArray = [];
         tempArray[0] = new Task(title, dueDate, notes);
         projectArray[listNumber] = tempArray;
     }
+    //If defined, we just add a new object
     else{
         tempArray[tempArray.length] = new Task(title, dueDate, notes);
         projectArray[listNumber] = tempArray;
     }
-    console.table(projectArray[listNumber]);
 }
 
 
 function displayTasks(){
-    const toDoList = document. querySelector(".toDoList");
+    const toDoList = document.querySelector(".toDoList");
     let listNumber = getSelectedList();
     let tempArray = projectArray[listNumber];
     if(tempArray !== undefined){
         for(let i = 0; i < tempArray.length; i++){
+            //Creating a  single TODO Task  
             const taskContainer = document.createElement("div");
             taskContainer.className = "taskContainer";
 
@@ -93,10 +93,11 @@ function displayTasks(){
                       }
                 });
 
+                //Appending notes at the container from an object
                 const notes = document.createElement("p");
                 notes.className = "notes";
                 notes.textContent = tempArray[i].notes;
-                
+
                 taskNotesContainer.appendChild(notesTitle);
                 taskNotesContainer.appendChild(exitNotesButton);
                 taskNotesContainer.appendChild(notes);
@@ -113,7 +114,7 @@ function displayTasks(){
     }
     
 }
-addTaskToList("Create a page", "2021-10-10", "HEEEEEEEEEEEEEEEEEEEEEY");
+addTaskToList("Create a page", "2021-10-10", "HEEEEEEEEEEEEEEEEEEEEEYYUUUUUUUU");
 addTaskToList("b", "c", "d");
 displayTasks();
 

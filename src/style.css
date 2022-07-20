@@ -86,11 +86,11 @@ body {
     color: var(--white, white);
 }
 
-.addButton:hover {
+.addButton:hover, .addTaskButton:hover {
     background-color: var(--light-blue, blue);
 }
 
-.addButton:active {
+.addButton:active, .addTaskButton:active {
     border: 5px solid black;
 }
 
@@ -150,6 +150,8 @@ body {
     display: grid;
     grid-template: 1fr 3fr / 1fr 1fr 1fr;
     justify-content: center;
+    white-space: initial;
+    overflow: hidden;
 }
 
 .notesTitle{
@@ -178,4 +180,19 @@ body {
     color: var(--dark-blue, blue);
     grid-row:2;
     grid-column: 1/4;
+    word-wrap: break-word;
 }
+
+.addTaskButton{
+    width: 20%;
+    height: 12%;
+    border-radius: 10px;
+    background-color: var(--dark-blue, white);
+    color: var(--white, blue);
+    justify-self: flex-end;
+    font-size: var(--menuFontSize);
+    font-family: var(--mainFont, sans-serif);
+    margin-left: 75%;
+    margin-top: 15px;
+}
+
