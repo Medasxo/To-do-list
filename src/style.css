@@ -249,4 +249,17 @@ body {
     font-family: var(--mainFont, sans-serif);
 }
 
+.exitFormButton{
+    right: 25px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    justify-self: right;
+    background-color: var(--dark-blue, white);
+    border-radius: 5px;
+    color: var(--white, blue);
+    border: 2px solid var(--dark-blue, blue);
+    font-size: 20px;
+}
+
 

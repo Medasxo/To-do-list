@@ -75,19 +75,4 @@ function uncheckActiveList(){
         children[i].removeAttribute("class");
     }
 }
-function changeActiveListOnMenu(){
-    const projectsList = document.getElementById("projectsList");
-    let children = projectsList.children;
-    console.log(children.length);
-    for(let i = 0; i < children.length; i++){
-        children[i].addEventListener('click', () => {
-            const mainContent = document.querySelector(".mainMenu");
-            const listTitle = document.querySelector(".listTitle");
-            console.log("a");
-            if(children[i].className === "active-list"){
-                listTitle.textContent = children[i].textContent;
-            } 
-            
-        });
-    }
-}
+
