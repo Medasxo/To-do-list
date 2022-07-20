@@ -31,41 +31,43 @@ body {
     border-radius: 20px;
     overflow: hidden;
 }
-.title{
+
+.title {
     display: inline-block;
     position: relative;
 }
 
-.title:after{
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--dark-blue, blue);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+.title:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark-blue, blue);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
-.title:hover:after{
+.title:hover:after {
     transform: scaleX(1);
-  transform-origin: bottom left;
+    transform-origin: bottom left;
 }
 
-#projectsList{
+#projectsList {
     height: 55%;
     width: 85%;
     align-self: start;
     overflow: hidden;
 }
 
-.active-list{
+.active-list {
     background-color: var(--light-blue, blue);
     border-radius: 10px;
 }
-.newListName{
+
+.newListName {
     width: 60%;
     height: 5%;
     border-radius: 10px;
@@ -74,7 +76,7 @@ body {
     font-size: calc(var(--menuFontSize)/2);
 }
 
-.addButton{
+.addButton {
     width: 80%;
     height: 10%;
     font-family: var(--mainFont, sans-serif);
@@ -84,16 +86,96 @@ body {
     color: var(--white, white);
 }
 
-.addButton:hover{
+.addButton:hover {
     background-color: var(--light-blue, blue);
 }
 
-.addButton:active{
+.addButton:active {
     border: 5px solid black;
 }
 
-.mainMenu{
+.mainMenu {
+    position: relative;
     width: 72%;
     border: 3px solid var(--dark-blue, blue);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listTitle {
+    font-size: 50px;
+    margin-left: 30px;
+    text-decoration: underline;
+
+}
+
+.toDoList {
+
+    width: 85%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.taskContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex: 0 1;
+
+    width: 100%;
+    border-bottom: 3px solid var(--dark-blue, blue);
+
+}
+
+.task {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.taskNotesContainer {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    left: 30%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    border: 3px solid var(--light-blue, blue);
+    border-radius: 10px;
+    background-color: var(--light-blue, blue);
+    display: grid;
+    grid-template: 1fr 3fr / 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+.notesTitle{
+    grid-row: 1;
+    grid-column: 2/3;
+    justify-self: center;
+    font-size: 30px;
+}
+
+.exitNotes{
+    grid-row: 1;
+    grid-column: 3;
+    width: 20%;
+    height: 30%;
+    justify-self: right;
+    background-color: var(--white, white);
+    border-radius: 5px;
+    color: var(--dark-blue, blue);
+    border: 2px solid var(--dark-blue, blue);
+    font-size: 20px;
+}
+
+.notes{
+    padding-left: 5px;
+    font-size: 24px;
+    color: var(--dark-blue, blue);
+    grid-row:2;
+    grid-column: 1/4;
 }

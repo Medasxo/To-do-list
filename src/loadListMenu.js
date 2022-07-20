@@ -1,4 +1,5 @@
 export function loadListMenu() {
+    let idCount = 1;
     const listMenu = document.createElement("div");
     listMenu.className = "listMenu";
 
@@ -13,9 +14,12 @@ export function loadListMenu() {
     const defaultList = document.createElement("li");
     defaultList.className = "active-list";
     defaultList.innerText = "Default";
+    defaultList.id = "0";
     defaultList.addEventListener('click', () => {
         uncheckActiveList();
         defaultList.className = "active-list";
+        const listTitle = document.querySelector(".listTitle");
+        listTitle.textContent = defaultList.textContent;
     });
     projectsList.appendChild(defaultList);
 
@@ -47,9 +51,13 @@ export function loadListMenu() {
             if(matchCount === 0){
                 const newList = document.createElement("li");
                 newList.innerText = textInput.value;
+                newList.id = idCount;
+                idCount++;
                 newList.addEventListener('click', () => {
                 uncheckActiveList();
                 newList.className = "active-list";
+                const listTitle = document.querySelector(".listTitle");
+                listTitle.textContent = newList.textContent;
             });
             projectsList.appendChild(newList);
         }
@@ -65,5 +73,21 @@ function uncheckActiveList(){
     let children = projectsList.children;
     for(let i = 0; i < children.length; i++){
         children[i].removeAttribute("class");
+    }
+}
+function changeActiveListOnMenu(){
+    const projectsList = document.getElementById("projectsList");
+    let children = projectsList.children;
+    console.log(children.length);
+    for(let i = 0; i < children.length; i++){
+        children[i].addEventListener('click', () => {
+            const mainContent = document.querySelector(".mainMenu");
+            const listTitle = document.querySelector(".listTitle");
+            console.log("a");
+            if(children[i].className === "active-list"){
+                listTitle.textContent = children[i].textContent;
+            } 
+            
+        });
     }
 }
