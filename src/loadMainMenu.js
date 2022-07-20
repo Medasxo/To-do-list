@@ -113,7 +113,19 @@ export function loadMainMenu(){
     document.body.appendChild(mainContent);
 }
 
-function displayTasks(){
+export function displayTasks(){
+
+    //Deleting previously displayed list
+    const tasksDelete = document.querySelectorAll(".task");
+    tasksDelete.forEach(task => {
+        task.remove();
+    });
+    const taskContainerDelete = document.querySelectorAll(".taskContainer");
+    taskContainerDelete.forEach(taskContainer => {
+        taskContainer.remove();
+    })
+
+
     const toDoList = document.querySelector(".toDoList");
     let listNumber = getSelectedList();
     let tempArray = projectArray[listNumber];
@@ -181,7 +193,7 @@ function displayTasks(){
     }
 }
 //Function that gets selected list's(toggled blue) ID
-function getSelectedList(){
+export function getSelectedList(){
     const projectsList = document.getElementById("projectsList");
     let children = projectsList.children;
     for(let i = 0; i < children.length; i++){
@@ -192,7 +204,7 @@ function getSelectedList(){
 }
 
 
-function addTaskToList(title, dueDate, notes){
+export function addTaskToList(title, dueDate, notes){
     let listNumber = getSelectedList();
     let tempArray = projectArray[listNumber];
     //Checking if tempArray is defined, if not, we define 0 element with the object, so that later tempArray will be defined.
@@ -208,7 +220,7 @@ function addTaskToList(title, dueDate, notes){
     }
 }
 
-class Task{
+export class Task{
     constructor(title, dueDate, notes){
         this.title = title;
         this.dueDate = dueDate;

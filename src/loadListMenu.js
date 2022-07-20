@@ -1,3 +1,4 @@
+import { displayTasks, getSelectedList, Task } from "./loadMainMenu";
 export function loadListMenu() {
     let idCount = 1;
     const listMenu = document.createElement("div");
@@ -20,6 +21,7 @@ export function loadListMenu() {
         defaultList.className = "active-list";
         const listTitle = document.querySelector(".listTitle");
         listTitle.textContent = defaultList.textContent;
+        displayTasks();
     });
     projectsList.appendChild(defaultList);
 
@@ -58,6 +60,7 @@ export function loadListMenu() {
                 newList.className = "active-list";
                 const listTitle = document.querySelector(".listTitle");
                 listTitle.textContent = newList.textContent;
+                displayTasks();
             });
             projectsList.appendChild(newList);
         }
