@@ -167,13 +167,12 @@ body {
     width: 20%;
     height: 30%;
     justify-self: right;
-    background-color: var(--white, white);
+    background-color: var(--dark-blue, white);
     border-radius: 5px;
-    color: var(--dark-blue, blue);
+    color: var(--white, blue);
     border: 2px solid var(--dark-blue, blue);
     font-size: 20px;
 }
-
 .notes{
     padding-left: 5px;
     font-size: 24px;
@@ -195,4 +194,59 @@ body {
     margin-left: 75%;
     margin-top: 15px;
 }
+
+.formContainer{
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    left: 15%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    background-color: var(--light-blue, blue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 30px;
+    gap: 30px;
+}
+
+.titleFormContainer, .dateFormContainer, .notesFormContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 20%;
+}
+
+.notesFormContainer{
+    height: 40%;
+    word-wrap: break-word;
+    white-space: initial;
+    overflow: hidden;
+   
+}
+
+.titleInput, .dateInput, .notesInput{
+    height: 50%;
+    border-radius: 10px;
+    border: 3px solid var(--dark-blue, blue);
+    background-color: var(--white, white);
+    color: var(--dark-blue, blue);
+    font-size: 20px;
+    font-family: var(--mainFont, sans-serif);
+}
+
+.submitButton{
+    width: 30%;
+    border-radius: 10px;
+    align-self: center;
+    height: 15%;
+    background-color: var(--dark-blue, blue);
+    color: var(--white, white);
+    font-size: 20px;
+    font-family: var(--mainFont, sans-serif);
+}
+
 
