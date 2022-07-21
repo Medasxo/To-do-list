@@ -1,6 +1,7 @@
 # To-do-list
 <p>
 Odin's project's "Todo List" made with mainly JS (with webpack, to dynamically create a structure + logic) and CSS (style);
+<br>
 Images of the project:
 
 <img src="finalImage1.png">
