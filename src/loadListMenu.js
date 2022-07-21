@@ -1,4 +1,4 @@
-import { displayTasks, getSelectedList, Task } from "./loadMainMenu";
+import { displayTasks, getSelectedList, Task, projectArray } from "./loadMainMenu";
 export function loadListMenu() {
     let idCount = 1;
     const listMenu = document.createElement("div");
@@ -39,7 +39,7 @@ export function loadListMenu() {
     const addLink = document.createElement("button");
     addLink.className = "addButton";
     addLink.setAttribute("type", "button");
-    addLink.innerText = "Add";
+    addLink.innerText = "Add List";
     addLink.addEventListener('click', () =>{
         if(textInput.value !== ""){
             let matchCount = 0;
@@ -68,6 +68,18 @@ export function loadListMenu() {
     });
 
     listMenu.appendChild(addLink);
+
+    const deleteListButton = document.createElement("button");
+    deleteListButton.className = "deleteListButton";
+    deleteListButton.textContent = "Delete List";
+    deleteListButton.addEventListener('click', ()=>{
+        let idSelected = getSelectedList();
+        console.log(idSelected);
+        document.getElementById(idSelected).remove();
+        defaultList.className = "active-list";
+        displayTasks();
+    });
+    listMenu.appendChild(deleteListButton);
 
     document.body.appendChild(listMenu);
 }

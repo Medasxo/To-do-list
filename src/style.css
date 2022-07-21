@@ -60,23 +60,36 @@ body {
     width: 85%;
     align-self: start;
     overflow: hidden;
+    margin: 0px;
 }
+
 
 .active-list {
+    
     background-color: var(--light-blue, blue);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+.inactive-list{
+    margin: 0px;
+    height: 10%;
+    display: flex;
+    align-items: center;
 }
 
+
 .newListName {
+    margin: 0px;
     width: 60%;
-    height: 5%;
     border-radius: 10px;
     font-family: var(--mainFont, sans-serif);
     font-size: var(--menuFontSize);
     font-size: calc(var(--menuFontSize)/2);
 }
 
-.addButton {
+.addButton, .deleteListButton {
     width: 80%;
     height: 10%;
     font-family: var(--mainFont, sans-serif);
@@ -86,11 +99,11 @@ body {
     color: var(--white, white);
 }
 
-.addButton:hover, .addTaskButton:hover {
+.addButton:hover, .addTaskButton:hover, .submitButton:hover {
     background-color: var(--light-blue, blue);
 }
 
-.addButton:active, .addTaskButton:active {
+.addButton:active, .addTaskButton:active, .submitButton:active {
     border: 5px solid black;
 }
 

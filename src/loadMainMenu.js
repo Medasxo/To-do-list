@@ -1,4 +1,4 @@
-let projectArray = [];
+export let projectArray = [];
 export function loadMainMenu(){
     const mainContent = document.createElement("div");
     mainContent.className = "mainMenu";
@@ -83,6 +83,7 @@ export function loadMainMenu(){
             if(titleInput.value !== "" && dateInput.value !== ""){
                 addTaskToList(titleInput.value, dateInput.value, notesInput.value);
                 displayTasks();
+                formContainer.style.display = "none";
             }
             
         });
