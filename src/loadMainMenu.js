@@ -140,15 +140,38 @@ export function displayTasks(){
             taskTitle.className = "task";
             taskTitle.textContent = tempArray[i].title;
 
+            const dateAndDoneContainer = document.createElement("div");
+            dateAndDoneContainer.className = "dateAndDoneContainer";
+
             const taskDate = document.createElement("p");
             taskDate.className = "task";
             taskDate.textContent = tempArray[i].dueDate;
 
+            const taskDone = document.createElement("button");
+            taskDone.setAttribute("type", "button");
+            taskDone.className = "taskDone";
+            taskDone.textContent = "Done";
+            taskDone.setAttribute("onclick", "event.stopPropagation()");
+            taskDone.addEventListener('click', () => {
+                let listNumber = getSelectedList();
+                taskContainer.remove();
+                let arrayOfTasks = projectArray[listNumber];
+                for(let j = 0;j < arrayOfTasks.length; j++){
+                    if(arrayOfTasks[j] === tempArray[i]){
+                        arrayOfTasks.splice(j, 1);
+                        projectArray[listNumber] = arrayOfTasks;
+                    }
+                }
+
+            });
+
             taskContainer.addEventListener('click', () => {
+                
 
                 //Remove previous notes containers if there was any.
                 const noteContainers = document.querySelectorAll(".taskNotesContainer");
                 noteContainers.forEach(noteContainer => {
+                    
                     noteContainer.remove();
                 });
 
@@ -184,9 +207,11 @@ export function displayTasks(){
 
                 toDoList.appendChild(taskNotesContainer);
             });
+            dateAndDoneContainer.appendChild(taskDate);
+            dateAndDoneContainer.appendChild(taskDone);
 
             taskContainer.appendChild(taskTitle);
-            taskContainer.appendChild(taskDate);
+            taskContainer.appendChild(dateAndDoneContainer);
             
             toDoList.appendChild(taskContainer);
         }

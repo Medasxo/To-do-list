@@ -74,7 +74,6 @@ export function loadListMenu() {
     deleteListButton.textContent = "Delete List";
     deleteListButton.addEventListener('click', ()=>{
         let idSelected = getSelectedList();
-        console.log(idSelected);
         document.getElementById(idSelected).remove();
         defaultList.className = "active-list";
         displayTasks();

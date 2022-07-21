@@ -65,14 +65,15 @@ body {
 
 
 .active-list {
-    
+
     background-color: var(--light-blue, blue);
     border-radius: 10px;
     display: flex;
     align-items: center;
     margin: 0px;
 }
-.inactive-list{
+
+.inactive-list {
     margin: 0px;
     height: 10%;
     display: flex;
@@ -89,7 +90,8 @@ body {
     font-size: calc(var(--menuFontSize)/2);
 }
 
-.addButton, .deleteListButton {
+.addButton,
+.deleteListButton {
     width: 80%;
     height: 10%;
     font-family: var(--mainFont, sans-serif);
@@ -99,11 +101,15 @@ body {
     color: var(--white, white);
 }
 
-.addButton:hover, .addTaskButton:hover, .submitButton:hover {
+.addButton:hover,
+.addTaskButton:hover,
+.submitButton:hover {
     background-color: var(--light-blue, blue);
 }
 
-.addButton:active, .addTaskButton:active, .submitButton:active {
+.addButton:active,
+.addTaskButton:active,
+.submitButton:active {
     border: 5px solid black;
 }
 
@@ -167,14 +173,14 @@ body {
     overflow: hidden;
 }
 
-.notesTitle{
+.notesTitle {
     grid-row: 1;
     grid-column: 2/3;
     justify-self: center;
     font-size: 30px;
 }
 
-.exitNotes{
+.exitNotes {
     grid-row: 1;
     grid-column: 3;
     width: 20%;
@@ -186,16 +192,17 @@ body {
     border: 2px solid var(--dark-blue, blue);
     font-size: 20px;
 }
-.notes{
+
+.notes {
     padding-left: 5px;
     font-size: 24px;
     color: var(--dark-blue, blue);
-    grid-row:2;
+    grid-row: 2;
     grid-column: 1/4;
     word-wrap: break-word;
 }
 
-.addTaskButton{
+.addTaskButton {
     width: 20%;
     height: 12%;
     border-radius: 10px;
@@ -208,7 +215,7 @@ body {
     margin-top: 15px;
 }
 
-.formContainer{
+.formContainer {
     position: absolute;
     width: 70%;
     height: 80%;
@@ -226,22 +233,26 @@ body {
     gap: 30px;
 }
 
-.titleFormContainer, .dateFormContainer, .notesFormContainer{
+.titleFormContainer,
+.dateFormContainer,
+.notesFormContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
     height: 20%;
 }
 
-.notesFormContainer{
+.notesFormContainer {
     height: 40%;
     word-wrap: break-word;
     white-space: initial;
     overflow: hidden;
-   
+
 }
 
-.titleInput, .dateInput, .notesInput{
+.titleInput,
+.dateInput,
+.notesInput {
     height: 50%;
     border-radius: 10px;
     border: 3px solid var(--dark-blue, blue);
@@ -251,7 +262,7 @@ body {
     font-family: var(--mainFont, sans-serif);
 }
 
-.submitButton{
+.submitButton {
     width: 30%;
     border-radius: 10px;
     align-self: center;
@@ -262,7 +273,7 @@ body {
     font-family: var(--mainFont, sans-serif);
 }
 
-.exitFormButton{
+.exitFormButton {
     right: 25px;
     position: absolute;
     width: 30px;
@@ -275,4 +286,30 @@ body {
     font-size: 20px;
 }
 
+.dateAndDoneContainer {
+    display: flex;
+    gap: 20px;
+}
 
+.taskDone {
+
+    font-family: var(--mainFont, sans-serif);
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.taskDone:hover {
+    background-color: var(--light-blue);
+    box-shadow: 0px 15px 20px var(--light-blue);
+    color: #fff;
+    transform: translateY(-7px);
+  }
